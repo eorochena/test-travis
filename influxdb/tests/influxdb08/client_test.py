@@ -7,7 +7,6 @@ import requests
 import requests.exceptions
 import socket
 import sys
-import unittest
 import requests_mock
 import random
 from nose.tools import raises
@@ -27,6 +26,10 @@ else:
     def u(x):
         return x
 
+if sys.version_info[:2] <= (2, 6):
+    import unittest2 as unittest
+else:
+    import unittest
 
 def _build_response_object(status_code=200, content=""):
     resp = requests.Response()
