@@ -10,14 +10,14 @@ import os
 
 import unittest
 
-@unittest.skipIf(sys.version_info < (2, 6),
-                     "not supported in this veresion")
+if sys.version_info[0:2] != (2, 6):
 
-using_pypy = hasattr(sys, "pypy_version_info")
-skipIfPYpy = unittest.skipIf(using_pypy, "Skipping this test on pypy.")
 
-_skip_server_tests = os.environ.get(
-    'INFLUXDB_PYTHON_SKIP_SERVER_TESTS',
-    None) == 'True'
-skipServerTests = unittest.skipIf(_skip_server_tests,
-                                  "Skipping server tests...")
+    using_pypy = hasattr(sys, "pypy_version_info")
+    skipIfPYpy = unittest.skipIf(using_pypy, "Skipping this test on pypy.")
+
+    _skip_server_tests = os.environ.get(
+        'INFLUXDB_PYTHON_SKIP_SERVER_TESTS',
+        None) == 'True'
+    skipServerTests = unittest.skipIf(_skip_server_tests,
+                                      "Skipping server tests...")
