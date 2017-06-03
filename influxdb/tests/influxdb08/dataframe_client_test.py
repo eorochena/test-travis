@@ -4,7 +4,6 @@ unit tests for misc module
 """
 from .client_test import _mocked_session
 
-import unittest
 import json
 import requests_mock
 from nose.tools import raises
@@ -12,6 +11,13 @@ from datetime import timedelta
 from influxdb.tests import skipIfPYpy, using_pypy
 import copy
 import warnings
+
+
+if sys.version_info[:2] <= (2, 6):
+    import unittest2 as unittest
+else:
+    import unittest
+
 
 if not using_pypy:
     import pandas as pd
