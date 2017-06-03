@@ -10,6 +10,9 @@ import os
 
 import unittest
 
+@unittest.skipIf(sys.version_info < (2, 6),
+                     "not supported in this veresion")
+
 using_pypy = hasattr(sys, "pypy_version_info")
 skipIfPYpy = unittest.skipIf(using_pypy, "Skipping this test on pypy.")
 
