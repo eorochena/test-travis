@@ -31,6 +31,7 @@ if sys.version_info[:2] <= (2, 6):
 else:
     import unittest
 
+
 def _build_response_object(status_code=200, content=""):
     resp = requests.Response()
     resp.status_code = status_code

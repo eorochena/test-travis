@@ -29,10 +29,15 @@ from nose.tools import raises
 from mock import patch
 import warnings
 import mock
-import unittest
 
 from influxdb import InfluxDBClient
 from influxdb.resultset import ResultSet
+
+
+if sys.version_info[:2] <= (2, 6):
+    import unittest2 as unittest
+else:
+    import unittest
 
 
 def _build_response_object(status_code=200, content=""):
