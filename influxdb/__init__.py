@@ -9,6 +9,7 @@ from .client import InfluxDBClient
 from .dataframe_client import DataFrameClient
 from .helper import SeriesHelper
 
+import unittest
 
 __all__ = [
     'InfluxDBClient',
