@@ -29,6 +29,7 @@ from nose.tools import raises
 from mock import patch
 import warnings
 import mock
+import sys
 
 from influxdb import InfluxDBClient
 from influxdb.resultset import ResultSet

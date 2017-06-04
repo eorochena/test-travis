@@ -11,6 +11,7 @@ from datetime import timedelta
 from influxdb.tests import skipIfPYpy, using_pypy
 import copy
 import warnings
+import sys
 
 
 if sys.version_info[:2] <= (2, 6):
