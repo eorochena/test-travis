@@ -16,6 +16,9 @@ from nose.tools import raises
 from datetime import timedelta
 from influxdb.tests import skipIfPYpy, using_pypy
 import warnings
+from influxdb.tests import u
+
+
 
 if not using_pypy:
     import pandas as pd

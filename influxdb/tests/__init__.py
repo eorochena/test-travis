@@ -10,6 +10,8 @@ import os
 
 if sys.version_info[:2] <= (2, 6):
     import unittest2 as unittest
+    using_py26 = "py26"
+    skipIfPy26 = unittest.skipIf(using_py26, "Skipping this test on py26")
 else:
     import unittest
 using_pypy = hasattr(sys, "pypy_version_info")
